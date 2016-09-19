@@ -1,7 +1,7 @@
 package com.example.stuart.draughts;
 
 // ANNOTATION TERMINOLOGY:
-// bMover- a piece which can slide into an adjacent square
+// Mover- a piece which can slide into an adjacent square
 // Jumper- a piece which can jump an enemy piece into the square beyond
 // LF, RF, LB, RB - Left-forward, right-forward, right-backward, left-backward (from Black's perspective)
 // Bitboard- a Long number, 45 bits used to represent some boolean property of every square of a game board, eg, all of the squares with white pieces on
