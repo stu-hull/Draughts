@@ -47,10 +47,28 @@ public class Game extends AppCompatActivity {
         currentBoard = new Board();
         player1Turn = player1Black;
     }
-
-
-    void endGame(boolean player1Winner) {
-
+    
+    //start game- runs continuously from the start of the game to the finish, returns winner (player1Winner)
+    public Boolean start(){
+        
+        Board newBoard; 
+        while (true){
+            //current player makes their move
+            if (player1Turn){
+                newBoard = player1.makeMove(currentBoard);
+            } else {
+                newBoard = player2.makeMove(currentBoard);
+            }
+            
+            //if newBoard is a nullBoard, the player has resigned and the other player wins
+            if (newBoard.allPieces() == 0){
+                return !player1Turn;
+            }
+            
+            //otherwise, display move on board
+            currentBoard = newBoard;
+            //Display currentBoard;
+        }
     }
 
 }
