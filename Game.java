@@ -65,7 +65,7 @@ public class Game extends AppCompatActivity {
             } else {
                 newBoard = player2.makeMove(currentBoard);
             }
-            if (newBoard.isNull()){
+            if (newBoard.allPieces() == 0){
                 inPlay = false;
                 player1win = !player1Turn;
                 endGame();
