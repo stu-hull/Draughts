@@ -96,6 +96,7 @@ public class Player {
         double kingValue = 100; //kings are worth x more than base value
         double backValue = 50; //pieces at the back are worth x more than base value
         double centerValue = 20; //pieces in the center are worth x more than base value
+        double ratioConstant = 0; //changes the weight of a difference in piece count
 
         double score = 0;
 
@@ -110,6 +111,9 @@ public class Player {
 
         score += board.blackCount(Board.maskCenter) * centerValue;
         score -= board.whiteCount(Board.maskCenter) * centerValue;
+
+        score *= (Long.bitCount(board.getBlackPieces()) + ratioConstant); //multiply the score by the ratio of black+constant : white+constant
+        score /= (Long.bitCount(board.getWhitePieces()) + ratioConstant); 
 
         return score;
 
