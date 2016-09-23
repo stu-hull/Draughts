@@ -1,5 +1,6 @@
 package com.example.stuart.draughts;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,6 +25,14 @@ public class MainMenu extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void startGame(View view) {
+        startActivityForResult(new Intent(MainMenu.this, Game.class), );
+        boolean againstComputer = true;
+        boolean player1black = true;
+        Game game = new Game(againstComputer, player1black);
+        game.runGame();
     }
 
 }
