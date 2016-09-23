@@ -71,12 +71,6 @@ public class Board {
         whitePieces = 0b0000000000000000000000000000000000000000000000L;
         kings =       0b0000000000000000000000000000000000000000000000L;
     } //sets up a board with no pieces on, the players return this as their best move if they cannot play
-    public boolean isNull(){
-        if (blackPieces + whitePieces + kings == 0){
-            return true;
-        }
-        return false;
-    } //checks is the board is null
     public void copyBoard(Board original){
         blackPieces = original.getBlackPieces();
         whitePieces = original.getWhitePieces();
